@@ -1,0 +1,14 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[packages]
+python-json-logger = "*"
+
+[requires]
+python_version = "3.6"
+
+[dev-packages]
+twine = "*"
+importlib-metadata = "==3.0.0"  # To get around pipenv bug: https://github.com/pypa/pipenv/issues/4476

@@ -1,0 +1,6 @@
+/.venv/
+/.videa/workspace.xml
+/build/
+/dist/
+*.egg-info
+
