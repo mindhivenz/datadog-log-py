@@ -19,10 +19,11 @@ Use logging as normal:
 
 ```python
 import logging
-from datadoglog import init_logging
+import datadoglog
 
-init_logging()
+datadoglog.init_logging()
 log = logging.getLogger("example")
-log.info("This line")
-log.debug("With extra info", extra={ "json": "data" })
+log.setLevel(logging.INFO)
+log.info("Some info", extra={"extra": "json"})
+# Outputs {"message": "Some info", "extra": "json", "timestamp": "2021-02-02T19:11:12.716126+00:00", "status": "info", "logger": {"name": "example"}}
 ```
