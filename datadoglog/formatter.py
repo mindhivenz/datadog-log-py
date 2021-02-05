@@ -10,6 +10,7 @@ class DatadogFormatter(jsonlogger.JsonFormatter):
     def add_fields(self, log_record, record, message_dict):
         super(DatadogFormatter, self).add_fields(log_record, record, message_dict)
         log_record["status"] = record.levelname.lower()
+        log_record.pop("level", None)
         log_record["logger"] = {"name": record.name}
         if record.exc_info:
             log_record["error"] = {
