@@ -5,7 +5,7 @@ README_PATH = pathlib.Path(__file__).parent / "README.md"
 
 setuptools.setup(
     name="datadog-log",
-    version="1.0.1",
+    version="1.1.0",
     description="JSON formatted logging for Datadog",
     long_description=README_PATH.read_text(),
     long_description_content_type="text/markdown",
