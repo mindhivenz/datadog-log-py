@@ -12,7 +12,7 @@ class DatadogFormatter(jsonlogger.JsonFormatter):
     def add_fields(self, log_record, record, message_dict):
         super().add_fields(log_record, record, message_dict)
         log_record["status"] = record.levelname.lower()
-        del log_record["level"]
+        log_record.pop("level", None)
         logger_dict = {
             "name": record.name,
             "method_name": f"{record.module}.{record.funcName}",
@@ -26,8 +26,8 @@ class DatadogFormatter(jsonlogger.JsonFormatter):
                 "stack": message_dict.get("stack_info"),
                 "message": message_dict.get("exc_info"),
             }
-            del log_record["exc_info"]
-            del log_record["stack_info"]
+            log_record.pop("exc_info", None)
+            log_record.pop("stack_info", None)
         for attr in DATADOG_UNIFIED_TAG_ATTRIBUTES:
             # If not set explicitly these will be blank, blocking them being set through other means
             # For example, determined based on the container producing the logs
