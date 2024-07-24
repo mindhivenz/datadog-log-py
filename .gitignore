@@ -1,5 +1,6 @@
 /.venv/
-/.videa/workspace.xml
+/.idea/workspace.xml
+/.idea/aws.xml
 /build/
 /dist/
 *.egg-info

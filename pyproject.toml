@@ -1,7 +1,26 @@
+[project]
+requires-python = "^3.8"
+
+[tool.poetry]
+name = "datadog-log"
+version = "1.5.0"
+description = "JSON formatted logging for Datadog"
+authors = ["Mindhive devs <devops@mindhive.co.nz>"]
+license = "MIT"
+repository = "https://github.com/mindhivenz/datadog-log-py"
+readme = "README.md"
+packages = [{ include = "datadoglog" }]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+python-json-logger = "^2"
+
+[tool.poetry.group.dev.dependencies]
+better-exceptions = "^0.3"
+
 [build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
 
 [tool.black]
 line-length = 120
-target-version = ['py37']
